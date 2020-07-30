@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 104 || Break Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        #timer {
+            text-align: center;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body onload="display_ct()">
+    <div class="container-fluid fixed-top zindex-tooltip text-center">
+        <div class="date_time">
+            <p>
+                <span id='ct'>Time Begain</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <img src="https://github.com/kumarbiplob336/LEDP-2020-WDD-104-Class/blob/master/Day%2028/Biplob%20Kumar-01787829450/Javascript%20Apps(25th%20Class's%20Assignment)/Data/source/image/LEDP/Digital%20Bangladesh%20&%20ICT.png?raw=true"
+            alt="Digital Bangladesh+ICT" class="float-left mt-2" width="500px" height="100px">
+        <img src="https://github.com/kumarbiplob336/LEDP-2020-WDD-104-Class/blob/master/Day%2028/Biplob%20Kumar-01787829450/Javascript%20Apps(25th%20Class's%20Assignment)/Data/source/image/LEDP/ledp%20&%20mujib%20100.png?raw=true"
+            alt="LEDP+Mujib" class="float-right mt-2" width="500px" height="100px">
+        <img src="https://github.com/kumarbiplob336/LEDP-2020-WDD-104-Class/blob/master/Day%2028/Biplob%20Kumar-01787829450/Javascript%20Apps(25th%20Class's%20Assignment)/Data/source/image/LEDP/Mubinltd.png?raw=true"
+            alt="Mubin Limited" class="d-block mt-5 mx-auto" width="160px" height="100px">
+        <marquee class="h5 mt-3" behavior="scroll" direction="left" scrollamount="5">Batch ID: L4RJWDD104</marquee>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-block mt-5">
+                <form name="hi">
+                    <input type="time" class="mx-auto" name="appt" id="appt" name="appt">
+                    <button type="button" class="btn btn-primary" onclick="myFun()">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="fixed-bottom py-3 bg-info text-white">
+        <div class="container-fluid">
+            <div class="text-center h5">
+                &copy; Biplob Kumar
+            </div>
+        </div>
+    </footer>
+    <script>
+        function myFun(){
+            var tim=hi.appt.value;
+            console.log(tim);
+            localStorage.setItem("KumarInputTime",tim);
+            window.location.assign("./home.html");
+        }
+
+
+
+        // ******************************Time*********************************
+        function display_c() {
+            var refresh = 1000; // Refresh rate in milli seconds
+            mytime = setTimeout('display_ct()', refresh);
+        }
+
+        function display_ct() {
+            var x = new Date();
+            document.getElementById('ct').innerHTML = x;
+            display_c();
+            var d = Date.now();
+            // console.log(x);
+            var d = new Date(d);
+            var data = d;
+
+            var weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+            var d = weekdayNames[d.getDay()] + ", " + d.getDate() + " " + monthNames[d.getMonth()] + " " + d
+                .getFullYear() + ', ' + (d.getHours() > 12 ? ((d.getHours() - 12) <= 9 ? ('0' + (d.getHours() - 12)) : (
+                    d.getHours() - 12)) : d.getHours()) + ':' + (d.getMinutes() <= 9 ? ('0' + d.getMinutes()) : d
+                    .getMinutes()) + ':' + (d.getSeconds() <= 9 ? ('0' + d.getSeconds()) : d.getSeconds()) + ' ' + (d
+                    .getHours() >= 12 ? "PM" : "AM") + ' ( ' + Intl.DateTimeFormat().resolvedOptions().timeZone + ' ).';
+
+            document.getElementById('ct').innerHTML = d;
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
