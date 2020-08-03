@@ -37,8 +37,15 @@
         <div class="row">
             <div class="col-md-12 d-block mt-5">
                 <form name="hi">
-                    <input type="time" class="mx-auto" name="appt" id="appt" name="appt">
-                    <button type="button" class="btn btn-primary" onclick="myFun()">Login</button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="time" class="d-flex mx-auto" name="appt" id="appt" name="appt">
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary d-flex mx-auto my-2" onclick="myFun()">Start
+                                Timer</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -55,7 +62,6 @@
     <script>
         function myFun() {
             var tim = hi.appt.value;
-            console.log(tim);
             localStorage.setItem("KumarInputTime", tim);
             window.location.assign("./home.html");
         }

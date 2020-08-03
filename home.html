@@ -18,14 +18,10 @@
       text-align: center;
     }
 
-    /* html {
-  height: 100%;
-} */
 
     .loader {
       height: 100vh;
       width: 100vw;
-      /* background: #EA4961; */
       display: -webkit-box;
       display: flex;
       -webkit-box-align: center;
@@ -542,21 +538,18 @@
     .marquee {
       margin: 0 auto;
       white-space: nowrap;
-      box-sizing: border-box;
-      padding: 0;
-      height: 16px;
+      padding: 0px;
       display: block;
     }
 
     .marquee span {
       display: inline-block;
-      width: 100%;
       text-indent: 0;
       overflow: hidden;
       -webkit-transition: 15s;
       transition: 15s;
-      -webkit-animation: marquee 15s linear infinite;
-      animation: marquee 15s linear infinite;
+      -webkit-animation: marquee 10s linear infinite;
+      animation: marquee 10s linear infinite;
     }
 
     @keyframes marquee {
@@ -635,7 +628,7 @@
       document.getElementById("loader").style.display = "none";
       document.getElementById("myDiv").style.display = "block";
     }
-    // link.replace("http://facebook.com/biplob.511285");
+
     // ******************************Time*********************************
     function display_c() {
       var refresh = 1000; // Refresh rate in milli seconds
@@ -643,7 +636,7 @@
     }
 
     function display_ct() {
-      tim = localStorage.getItem("KumarInputTime");
+      var tim = localStorage.getItem("KumarInputTime");
       var x = new Date();
       document.getElementById('ct').innerHTML = x;
       display_c();
@@ -672,8 +665,6 @@
 
       var countDownDate = new Date(today + tim).getTime();
 
-      // // Update the count down every 1 second
-      // var x = setInterval(function () {
       var now = new Date().getTime();
       var distance = countDownDate - now;
 
@@ -706,9 +697,8 @@
       }
       if (distance <= 0) {
         clearInterval(x);
-        document.getElementById("timer").innerHTML = "EXPIRED";
+        document.getElementById("timer").innerHTML = "End of Breaktime";
       }
-      // }, 1000);
     }
   </script>
 
