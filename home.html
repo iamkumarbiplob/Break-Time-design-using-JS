@@ -539,6 +539,40 @@
         transform: scale(1, 1);
       }
     }
+
+    .marquee {
+      margin: 0 auto;
+      white-space: nowrap;
+      /* overflow: hidden; */
+      box-sizing: border-box;
+      padding: 0;
+      height: 16px;
+      display: block;
+      /* font-weight: 900; */
+      /* font-size: 25px; */
+    }
+
+    .marquee span {
+      display: inline-block;
+      text-indent: 0;
+      overflow: hidden;
+      -webkit-transition: 15s;
+      transition: 15s;
+      -webkit-animation: marquee 15s linear infinite;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate(100%, 0);
+        -webkit-transform: translateX(100%);
+      }
+
+      100% {
+        transform: translate(-100%, 0);
+        -webkit-transform: translateX(-100%);
+      }
+    }
   </style>
 </head>
 
@@ -573,7 +607,8 @@
       <img
         src="https://github.com/kumarbiplob336/LEDP-2020-WDD-104-Class/blob/master/Day%2028/Biplob%20Kumar-01787829450/Javascript%20Apps(25th%20Class's%20Assignment)/Data/source/image/LEDP/Mubinltd.png?raw=true"
         alt="Mubin Limited" class="d-block mt-5 mx-auto" width="160px" height="100px">
-      <marquee class="h5 mt-3" behavior="scroll" direction="left" scrollamount="5">Batch ID: L4RJWDD104</marquee>
+      <!-- <marquee class="h5 mt-3" behavior="scroll" direction="left" scrollamount="5">Batch ID: L4RJWDD104</marquee> -->
+      <p class="marquee mt-3 h5"><span>Batch ID: L4RJWDD104</span></p>
     </div>
     <div class="container">
       <div class="row">
